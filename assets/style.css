@@ -1,0 +1,28 @@
+button {
+    height: 50px;
+    width: 300px;
+    background-color: purple;
+    color: white;
+    border-radius: 10px;
+  
+}
+
+button:hover {
+    background-color: rgb(202, 72, 197);
+    cursor: pointer;
+
+}
+
+
+#quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    justify-content: flex-start;
+}
+
+.answers {
+    margin: 2px;
+
+}
