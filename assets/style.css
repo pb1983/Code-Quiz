@@ -40,3 +40,10 @@ button:hover {
     margin: 2px;
 
 }
+
+#finalScore {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}

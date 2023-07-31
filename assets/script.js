@@ -14,11 +14,11 @@ let questionButton2 = document.querySelector("#answer2");
 let questionButton3 = document.querySelector("#answer3");
 let questionButton4 = document.querySelector("#answer4");
 
-let answer1 = "Great";
+let finalScore = document.querySelector("#finalScore");
 
 let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
-
+let answer1 = "Great";
 
 
 let questions = [{question: "How are you?", 
@@ -76,17 +76,31 @@ questionButton4.textContent = questions[currentQuestion].answers[3]
 quizDiv.addEventListener("click", function(event){
 
 
-    if (answer1 === questions[currentQuestion].correctAnswer) {
-       console.log(score++);
-    }  else {
-        time -= 10;
-    }
+console.log(event.target);
 
-    if(event.target.matches("button")){
+    if(event.target.matches("button")) {
+
+        if(event.target.textContent === questions[currentQuestion].correctAnswer) {
+            console.log("User chose correct answer");
+        } else {
+            console.log("Wrong Answer")           
+            time -= 10;
+        }
+
+        
         currentQuestion++
-        renderQuestion();
+        console.log("on question: ", currentQuestion, "is quiz over: ", currentQuestion >= questions.length-1)
+        if (currentQuestion >= questions.length-1) {
+            quizDiv.style.display = 'none';
+            finalScore.style.display = 'flex';
+        }
+    renderQuestion();
     } 
+
+    
     
 })
+
+
 
 //put JSON.stringify in the button that saves the score and player initials
