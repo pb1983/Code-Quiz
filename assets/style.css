@@ -1,4 +1,8 @@
 
+a {
+    text-decoration: none;
+}
+
 h4 {
     display: flex;
     justify-content: flex-end;
@@ -10,6 +14,7 @@ button {
     background-color: purple;
     color: white;
     border-radius: 10px;
+    font-size: 20px;
 }
 
 button:hover {
@@ -46,4 +51,23 @@ button:hover {
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
+}
+
+#initBox {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+#initScore {
+    display: inline-block;
+}
+
+#correct {
+    border-top: 2px solid grey;
+    color: grey
+}
+
+#incorrect {
+    border-top: 2px solid grey;
+    color: grey;
 }
