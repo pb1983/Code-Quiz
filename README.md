@@ -1,6 +1,6 @@
 # Code-Quiz
 
-### This application records the multiple choice answers provided by the user and displays their score after the last question has been answered. There is a time limit of 60 sections to complete the quiz, and wrong answers will further deduct from the remaining time. They will then be asked to enter their initials, which can be viewed on a separate page by following the link in the upper left-hand corner of the page. The option to remove all recorded scores is also available. 
+### This application records the multiple choice answers provided by the user and displays their score after the last question has been answered. There is a time limit of 60 seconds to complete the quiz, and wrong answers will further deduct from the remaining time. They will then be asked to enter their initials, which can be viewed on a separate page by following the link in the upper left-hand corner of the page. The option to remove all recorded scores is also available. 
 
 ### The below concepts were applied to this project from our lessons/class activities. 
 
