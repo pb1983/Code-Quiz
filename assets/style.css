@@ -28,9 +28,11 @@ button:hover {
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
-    justify-content: flex-start;
+    
 
 }
+
+/* Default display is 'none' so that it does not appear until user presses the start button */
 
 #quiz {
     display: none;
@@ -41,10 +43,18 @@ button:hover {
    
 }
 
-.answers {
-    margin: 2px;
-
+#scoreLink {
+    position: absolute;
+    top: 20px;
+    left: 18px;
+    font-size: 18px;
+    border: 2px solid black;
+    background-color: grey;
+    padding: 5px;
 }
+ 
+
+/* Default display is 'none' so that it does not appear until user presses the start button */
 
 #finalScore {
     display: none;
@@ -62,12 +72,32 @@ button:hover {
     display: inline-block;
 }
 
+/* Indicates correct answer */
+
 #correct {
     border-top: 2px solid grey;
     color: grey
 }
 
+/* Indicates incorrect answer */
+
 #incorrect {
     border-top: 2px solid grey;
     color: grey;
+}
+.answers {
+    margin: 2px;
+
+}
+/* Score page positioning and spacing */
+
+#hs-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 130px;
+}
+
+#back {
+    margin-bottom: 3px;
 }

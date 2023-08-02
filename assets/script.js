@@ -13,7 +13,7 @@ let initScore = document.querySelector("#initScore");
 
 
 
-// let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 
 let questionButton1 = document.querySelector("#answer1");
@@ -21,19 +21,24 @@ let questionButton2 = document.querySelector("#answer2");
 let questionButton3 = document.querySelector("#answer3");
 let questionButton4 = document.querySelector("#answer4");
 
+//Questions
 
-let questions = [{question: "How are you?", 
-                answers: ["Great", "OK", "Not great", "Terrible"], correctAnswer: "Great" },
-                {question: "Who were you yesterday?", 
-                answers: ["Great", "OK", "Not great", "Terrible"], correctAnswer: "Great" },
-                {question: "How are you?", 
-                answers: ["Great", "OK", "Not great", "Terrible"], correctAnswer: "Great" },
-                {question: "Who are you?", 
-                answers: ["Great", "OK", "Not great", "Terrible"], correctAnswer: "Great" },
-                {question: "Where are you?", 
-                answers: ["Great", "OK", "Not great", "Terrible"], correctAnswer: "Great" }
+let questions = [{question: "Which language styles the webpage?", 
+                answers: ["HTML", "CSS", "Javascript", "Python"], correctAnswer: "CSS" },
+                {question: "Each .html file starts with which declaration?", 
+                answers: ["Head", "Body", "!DOCTYPE", "DOM"], correctAnswer: "!DOCTYPE" },
+                {question: "Which of the following is not a basic programming language for front-end web development?", 
+                answers: ["HTML", "CSS", "C#", "Javascript"], correctAnswer: "C#" },
+                {question: "A Javascript ID can be identified by which character?", 
+                answers: ["#", "&", ".", "$"], correctAnswer: "#" },
+                {question: "Git is an example of what kind of application?", 
+                answers: ["text editor", "web browser", "version control system", "API"], correctAnswer: "version control system" },
+                {question: "", 
+                answers: [""], correctAnswer: "" }
+                
 ]
 
+//Starts quiz and timer
 
 start.addEventListener("click", function() {
     
@@ -70,8 +75,10 @@ questionButton4.textContent = questions[currentQuestion].answers[3]
 
 
 
+
 }
 
+//Records answers and advances to the section where scores are displayed and initials are logged. 
 
 quizDiv.addEventListener("click", function(event){
 
@@ -85,20 +92,26 @@ quizDiv.addEventListener("click", function(event){
             time -= 10;
         }
 
+        
 
         currentQuestion++
-
         
+      
         if (currentQuestion >= questions.length-1) {
             quizDiv.style.display = 'none';
             finalScore.style.display = 'flex';
         }
 
-    renderQuestion();
-    
+        
+        renderQuestion();
+
+        
     } 
     quizEnd();
 })
+
+
+//Notifies user of their score and asks for their initials. 
 
     function quizEnd() {    
 
@@ -110,10 +123,16 @@ quizDiv.addEventListener("click", function(event){
 
    
 finalScore.addEventListener("click", function(event) {
+
+
+    if (event.target.matches("#initScore")) {
     let initials = document.querySelector("#initBox").value;
     localStorage.setItem("initials", initials);
+
+    highScores.push({initials, score})
+    localStorage.setItem("highScores",JSON.stringify(highScores))
+    }
 })
 
 
 
-//localStorage.setItem("highScores", JSON.stringify([{"initials": "dre", "score": 80}]))

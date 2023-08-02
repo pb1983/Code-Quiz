@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High Scores</title>
     <link rel="stylesheet" href="./assets/style.css">
 </head>
-<body>
-    <h1>High Scores</h1>
-    <a href="/index.html">
-    <button id="back">Go back</button>
-    </a>
-    <button>Clear high scores</button>
 
+<body>
+    <div id="hs-body">
+        <h1>Scoreboard:</h1>
+        <ol id="leaders">
+        </ol>
+        <a href="/index.html">
+            <button id="back">Go back</button>
+        </a>
+        <button id="clear">Clear all scores</button>
+    </div>
     <script src="./assets/highScores.js"></script>
 </body>
+
 </html>
