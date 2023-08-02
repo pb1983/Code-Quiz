@@ -86,9 +86,11 @@ quizDiv.addEventListener("click", function(event){
 
         if(event.target.textContent === questions[currentQuestion].correctAnswer) {
             correctAnswer.textContent = "Correct!";
+            wrongAnswer.textContent = "";
             score += 1;
         } else {
-            wrongAnswer.textContent = "Incorrect. 10 seconds will be deducted from the clock.";         
+            wrongAnswer.textContent = "Incorrect. 10 seconds will be deducted from the clock.";       
+            correctAnswer.textContent = "";  
             time -= 10;
         }
 
